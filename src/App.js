@@ -20,10 +20,10 @@ const App = () => {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'x-access-token': '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',
+        'x-access-token': process.env.REACT_APP_ACCESS_TOKEN,
       },
     }
-    fetch('https://teknasyon.netlify.app/.netlify/functions/products', obj)
+    fetch(process.env.REACT_APP_API_KEY, obj)
       .then(res => res.json())
       .then(
         (result) => {
@@ -105,7 +105,7 @@ const App = () => {
 }
 
 const styles = {
-  smtWentWrong: {alignSelf: 'center', justifyContent: 'center', display: 'flex', marginTop: '50%'},
+  smtWentWrong: {alignSelf: 'center', justifyContent: 'center', display: 'flex', marginTop: '30%'},
   main: {borderRadius: 10, marginTop: 10, alignSelf: 'center', justifyContent: 'center', width: '50%', height: 30, fontSize: 13},
   searchContainer: {flexDirection: 'row', display: 'flex', width: '100%', marginTop: 10, justifyContent: 'center', alignItems: 'center'},
   renderProductContainer: {flexDirection: 'row', display: 'flex', flexWrap: 'wrap', justifyContent: 'center'},
